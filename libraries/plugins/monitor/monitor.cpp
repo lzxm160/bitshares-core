@@ -93,7 +93,7 @@ void monitor_plugin::plugin_shutdown() {
 }
 
 void monitor_plugin::monitor_signed_block(const graphene::chain::signed_block& blk) {
-     cout<<">>>brad test monitor_signed_block start: "<<endl;
+     cerr<<">>>brad test monitor_signed_block start: "<<endl;
     for (uint32_t i = 0; i < blk.transactions.size(); ++i) {
         processed_transaction trans = blk.transactions[i];
 
@@ -106,7 +106,7 @@ void monitor_plugin::monitor_signed_block(const graphene::chain::signed_block& b
                 const account_object& to_account = op_trans.to(database());
                 const asset_object& asset_type = op_trans.amount.asset_id(database());
 
-                cout<<">>>brad test signed block: action transfer: "<< from_account.name << " -> " << to_account.name << " "
+                cerr<<">>>brad test signed block: action transfer: "<< from_account.name << " -> " << to_account.name << " "
                     << asset_type.amount_to_pretty_string(op_trans.amount) << endl;
             }
         }
@@ -124,7 +124,7 @@ void monitor_plugin::monitor_pending_transaction( const graphene::chain::signed_
             const account_object& to_account = op_trans.to(database());
             const asset_object& asset_type = op_trans.amount.asset_id(database());
 
-            cout<<">>>brad test pending transaction: +action transfer: "<< from_account.name << " -> " << to_account.name << " "
+            cerr<<">>>brad test pending transaction: +action transfer: "<< from_account.name << " -> " << to_account.name << " "
                 << asset_type.amount_to_pretty_string(op_trans.amount) << endl;
         }
     }
