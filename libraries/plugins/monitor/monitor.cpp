@@ -93,6 +93,7 @@ void monitor_plugin::plugin_shutdown() {
 }
 
 void monitor_plugin::monitor_signed_block(const graphene::chain::signed_block& blk) {
+     cout<<">>>brad test monitor_signed_block start: "<<endl;
     for (uint32_t i = 0; i < blk.transactions.size(); ++i) {
         processed_transaction trans = blk.transactions[i];
 
